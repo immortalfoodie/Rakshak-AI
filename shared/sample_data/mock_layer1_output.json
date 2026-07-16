@@ -1,0 +1,33 @@
+{
+  "corridor": "hormuz",
+  "timestamp": "2026-07-16T10:00:00Z",
+  "score": 72,
+  "alert_level": "high",
+  "sub_scores": {
+    "news_sentiment": 65,
+    "sanctions_delta": 40,
+    "ais_dark_fleet": 85,
+    "prediction_market": 78,
+    "futures_spread": 60
+  },
+  "evidence": [
+    {
+      "source": "GDELT",
+      "summary": "Increased naval activity reported near Strait of Hormuz following escalation in regional tensions",
+      "url": "https://example.com/gdelt-article-1",
+      "timestamp": "2026-07-16T09:45:00Z"
+    },
+    {
+      "source": "OFAC",
+      "summary": "New sanctions designations issued against entities linked to Iranian oil exports",
+      "url": "https://example.com/ofac-notice-1",
+      "timestamp": "2026-07-16T08:30:00Z"
+    },
+    {
+      "source": "AIS",
+      "summary": "Detected cluster of transponder gaps among tankers transiting near the Strait of Hormuz in the last 24 hours",
+      "url": "",
+      "timestamp": "2026-07-16T07:00:00Z"
+    }
+  ]
+}

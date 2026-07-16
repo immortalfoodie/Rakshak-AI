@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Layer1Output",
+  "description": "Corridor risk score produced by layer1-watch",
+  "type": "object",
+  "required": ["corridor", "timestamp", "score", "alert_level", "sub_scores", "evidence"],
+  "properties": {
+    "corridor": {
+      "type": "string",
+      "description": "Identifier for the shipping/supply corridor",
+      "enum": ["hormuz", "red_sea", "iran_exports"]
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp when this score was generated"
+    },
+    "score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Overall fused risk score for this corridor"
+    },
+    "alert_level": {
+      "type": "string",
+      "enum": ["low", "medium", "high", "critical"]
+    },
+    "sub_scores": {
+      "type": "object",
+      "description": "Individual signal scores that were fused into the overall score. Use null for any signal source not available.",
+      "properties": {
+        "news_sentiment": { "type": ["number", "null"], "minimum": 0, "maximum": 100 },
+        "sanctions_delta": { "type": ["number", "null"], "minimum": 0, "maximum": 100 },
+        "ais_dark_fleet": { "type": ["number", "null"], "minimum": 0, "maximum": 100 },
+        "prediction_market": { "type": ["number", "null"], "minimum": 0, "maximum": 100 },
+        "futures_spread": { "type": ["number", "null"], "minimum": 0, "maximum": 100 }
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "description": "Supporting evidence items behind the score, for explainability",
+      "items": {
+        "type": "object",
+        "required": ["source", "summary", "timestamp"],
+        "properties": {
+          "source": { "type": "string" },
+          "summary": { "type": "string" },
+          "url": { "type": "string" },
+          "timestamp": { "type": "string", "format": "date-time" }
+        }
+      }
+    }
+  }
+}

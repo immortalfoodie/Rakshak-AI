@@ -1,0 +1,35 @@
+{
+  "scenario_id": "hormuz_partial_closure_30pct",
+  "trigger_corridor": "hormuz",
+  "trigger_score": 72,
+  "timestamp": "2026-07-16T10:05:00Z",
+  "confidence": "medium",
+  "assumptions_used": ["hormuz_to_brent_elasticity", "inr_passthrough_lag", "fuel_price_stickiness"],
+  "projections": {
+    "brent_price_usd": [
+      { "day": 0, "value": 85.0 },
+      { "day": 1, "value": 92.4 },
+      { "day": 3, "value": 95.8 },
+      { "day": 7, "value": 97.1 },
+      { "day": 14, "value": 94.2 }
+    ],
+    "inr_usd_rate": [
+      { "day": 0, "value": 83.2 },
+      { "day": 7, "value": 84.6 },
+      { "day": 14, "value": 85.1 }
+    ],
+    "domestic_fuel_price_inr_per_liter": [
+      { "day": 0, "value": 96.5 },
+      { "day": 7, "value": 98.8 },
+      { "day": 14, "value": 101.2 }
+    ],
+    "state_impact": [
+      { "state": "Gujarat", "stress_index": 0.81 },
+      { "state": "Maharashtra", "stress_index": 0.64 },
+      { "state": "Tamil Nadu", "stress_index": 0.55 },
+      { "state": "Uttar Pradesh", "stress_index": 0.47 },
+      { "state": "Haryana", "stress_index": 0.42 }
+    ],
+    "gdp_drag_pct": 0.4
+  }
+}

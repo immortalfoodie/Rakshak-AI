@@ -1,0 +1,90 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Layer2Output",
+  "description": "Scenario impact projection produced by layer2-model",
+  "type": "object",
+  "required": ["scenario_id", "trigger_corridor", "trigger_score", "timestamp", "confidence", "assumptions_used", "projections"],
+  "properties": {
+    "scenario_id": {
+      "type": "string",
+      "description": "Identifier for the simulated scenario"
+    },
+    "trigger_corridor": {
+      "type": "string",
+      "description": "The corridor whose Layer 1 score triggered this scenario"
+    },
+    "trigger_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "The Layer 1 score at the time this scenario was triggered"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "confidence": {
+      "type": "string",
+      "enum": ["low", "medium", "high"]
+    },
+    "assumptions_used": {
+      "type": "array",
+      "description": "Short IDs referencing rows in the assumptions table used for this projection",
+      "items": { "type": "string" }
+    },
+    "projections": {
+      "type": "object",
+      "required": ["brent_price_usd", "inr_usd_rate", "domestic_fuel_price_inr_per_liter", "state_impact", "gdp_drag_pct"],
+      "properties": {
+        "brent_price_usd": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["day", "value"],
+            "properties": {
+              "day": { "type": "integer", "minimum": 0 },
+              "value": { "type": "number" }
+            }
+          }
+        },
+        "inr_usd_rate": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["day", "value"],
+            "properties": {
+              "day": { "type": "integer", "minimum": 0 },
+              "value": { "type": "number" }
+            }
+          }
+        },
+        "domestic_fuel_price_inr_per_liter": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["day", "value"],
+            "properties": {
+              "day": { "type": "integer", "minimum": 0 },
+              "value": { "type": "number" }
+            }
+          }
+        },
+        "state_impact": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["state", "stress_index"],
+            "properties": {
+              "state": { "type": "string" },
+              "stress_index": { "type": "number", "minimum": 0, "maximum": 1 }
+            }
+          }
+        },
+        "gdp_drag_pct": {
+          "type": "number",
+          "description": "Projected national GDP drag as a percentage"
+        }
+      }
+    }
+  }
+}

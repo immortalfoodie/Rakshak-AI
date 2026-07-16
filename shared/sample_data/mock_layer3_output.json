@@ -1,0 +1,51 @@
+{
+  "generated_at": "2026-07-16T10:06:30Z",
+  "triggered_by_scenario": "hormuz_partial_closure_30pct",
+  "recommendations": [
+    {
+      "rank": 1,
+      "source_supplier": "Iraq - Basra",
+      "route": "Basra -> Vadinar via Arabian Sea (non-Hormuz)",
+      "tanker_class": "VLCC",
+      "tanker_availability": "3 available within 72h",
+      "refinery_grade_match": true,
+      "spot_price_usd_per_bbl": 78.5,
+      "cost_delta_vs_baseline_pct": 4.2,
+      "time_to_execute_hours": 96,
+      "port_congestion_factor": "low",
+      "diversification_value": "high - reduces Hormuz exposure",
+      "relationship_cost": "low - existing supplier relationship",
+      "rationale": "Compatible sour crude grade, existing contract in place, and route avoids Hormuz entirely at a modest cost premium"
+    },
+    {
+      "rank": 2,
+      "source_supplier": "Nigeria - Bonny Light",
+      "route": "Bonny -> Jamnagar via Cape of Good Hope",
+      "tanker_class": "Suezmax",
+      "tanker_availability": "2 available within 120h",
+      "refinery_grade_match": true,
+      "spot_price_usd_per_bbl": 81.0,
+      "cost_delta_vs_baseline_pct": 7.8,
+      "time_to_execute_hours": 168,
+      "port_congestion_factor": "medium",
+      "diversification_value": "high - fully independent of Middle East corridors",
+      "relationship_cost": "medium - new spot arrangement, no existing contract",
+      "rationale": "Highest diversification value of available options, but longer transit time and higher cost make it a secondary choice"
+    },
+    {
+      "rank": 3,
+      "source_supplier": "United States - WTI Midland",
+      "route": "Houston -> Paradip via Cape of Good Hope",
+      "tanker_class": "VLCC",
+      "tanker_availability": "1 available within 144h",
+      "refinery_grade_match": true,
+      "spot_price_usd_per_bbl": 83.2,
+      "cost_delta_vs_baseline_pct": 9.5,
+      "time_to_execute_hours": 192,
+      "port_congestion_factor": "low",
+      "diversification_value": "high - fully independent of Middle East corridors",
+      "relationship_cost": "low - established trade relationship",
+      "rationale": "Reliable grade match and low relationship cost, but highest price and longest lead time of the top three options"
+    }
+  ]
+}

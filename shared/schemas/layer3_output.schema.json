@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Layer3Output",
+  "description": "Ranked procurement recommendations produced by layer3-act",
+  "type": "object",
+  "required": ["generated_at", "triggered_by_scenario", "recommendations"],
+  "properties": {
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "triggered_by_scenario": {
+      "type": "string",
+      "description": "The scenario_id from Layer 2 that triggered these recommendations"
+    },
+    "recommendations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "rank", "source_supplier", "route", "tanker_class", "tanker_availability",
+          "refinery_grade_match", "spot_price_usd_per_bbl", "cost_delta_vs_baseline_pct",
+          "time_to_execute_hours", "port_congestion_factor", "diversification_value",
+          "relationship_cost", "rationale"
+        ],
+        "properties": {
+          "rank": { "type": "integer", "minimum": 1 },
+          "source_supplier": { "type": "string" },
+          "route": { "type": "string" },
+          "tanker_class": { "type": "string" },
+          "tanker_availability": { "type": "string" },
+          "refinery_grade_match": {
+            "type": "boolean",
+            "description": "Hard constraint - must be true for a recommendation to be valid"
+          },
+          "spot_price_usd_per_bbl": { "type": "number" },
+          "cost_delta_vs_baseline_pct": { "type": "number" },
+          "time_to_execute_hours": { "type": "number", "minimum": 0 },
+          "port_congestion_factor": { "type": "string", "enum": ["low", "medium", "high"] },
+          "diversification_value": { "type": "string" },
+          "relationship_cost": { "type": "string" },
+          "rationale": { "type": "string" }
+        }
+      }
+    }
+  }
+}
