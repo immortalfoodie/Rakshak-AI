@@ -1,0 +1,10 @@
+date,news_count,sanctions_delta,baseline_keywords,event_notes
+2025-01-04,12,0,15,Normal baseline — post-holiday quiet period
+2025-01-05,18,0,22,Normal baseline
+2025-01-06,28,1,35,US carrier group deployment to Gulf reported; first OFAC entry
+2025-01-07,42,2,52,IRGC naval exercises near Hormuz; 2 cumulative OFAC entries
+2025-01-08,65,3,78,Escalation warnings; US sanctions threats; 3 OFAC entries
+2025-01-09,100,4,95,PEAK TENSION: IRGC-USN incidents in Persian Gulf; 4 OFAC entries
+2025-01-10,135,4,150,Full escalation; tanker rerouting announcements
+2025-01-11,155,5,185,PRICE SPIKE: Brent crude +6pct
+2025-01-12,145,5,170,Continued coverage; diplomatic back-channel talks reported
