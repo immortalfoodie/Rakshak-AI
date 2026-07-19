@@ -1,35 +1,112 @@
 {
-  "scenario_id": "hormuz_partial_closure_30pct",
+  "scenario_id": "hormuz_disruption_32pct",
   "trigger_corridor": "hormuz",
   "trigger_score": 72,
-  "timestamp": "2026-07-16T10:05:00Z",
-  "confidence": "medium",
-  "assumptions_used": ["hormuz_to_brent_elasticity", "inr_passthrough_lag", "fuel_price_stickiness"],
+  "timestamp": "2026-07-19T06:01:41Z",
+  "confidence": "high",
+  "assumptions_used": [
+    "score_to_disruption_mapping",
+    "hormuz_global_share",
+    "hormuz_india_share",
+    "india_import_dependency",
+    "brent_supply_elasticity",
+    "price_decay_transient",
+    "price_decay_sustained",
+    "inr_oil_depreciation",
+    "fuel_passthrough",
+    "crude_to_retail_factor",
+    "state_vulnerability_weights",
+    "gdp_drag_elasticity"
+  ],
   "projections": {
     "brent_price_usd": [
-      { "day": 0, "value": 85.0 },
-      { "day": 1, "value": 92.4 },
-      { "day": 3, "value": 95.8 },
-      { "day": 7, "value": 97.1 },
-      { "day": 14, "value": 94.2 }
+      {
+        "day": 0,
+        "value": 85.0
+      },
+      {
+        "day": 1,
+        "value": 101.83
+      },
+      {
+        "day": 3,
+        "value": 99.31
+      },
+      {
+        "day": 7,
+        "value": 94.26
+      },
+      {
+        "day": 14,
+        "value": 89.21
+      },
+      {
+        "day": 30,
+        "value": 85.84
+      }
     ],
     "inr_usd_rate": [
-      { "day": 0, "value": 83.2 },
-      { "day": 7, "value": 84.6 },
-      { "day": 14, "value": 85.1 }
+      {
+        "day": 0,
+        "value": 85.5
+      },
+      {
+        "day": 7,
+        "value": 87.18
+      },
+      {
+        "day": 14,
+        "value": 86.41
+      },
+      {
+        "day": 30,
+        "value": 86.41
+      }
     ],
     "domestic_fuel_price_inr_per_liter": [
-      { "day": 0, "value": 96.5 },
-      { "day": 7, "value": 98.8 },
-      { "day": 14, "value": 101.2 }
+      {
+        "day": 0,
+        "value": 96.72
+      },
+      {
+        "day": 7,
+        "value": 98.64
+      },
+      {
+        "day": 14,
+        "value": 98.56
+      },
+      {
+        "day": 30,
+        "value": 97.54
+      }
     ],
     "state_impact": [
-      { "state": "Gujarat", "stress_index": 0.81 },
-      { "state": "Maharashtra", "stress_index": 0.64 },
-      { "state": "Tamil Nadu", "stress_index": 0.55 },
-      { "state": "Uttar Pradesh", "stress_index": 0.47 },
-      { "state": "Haryana", "stress_index": 0.42 }
+      {
+        "state": "Gujarat",
+        "stress_index": 0.38
+      },
+      {
+        "state": "Maharashtra",
+        "stress_index": 0.31
+      },
+      {
+        "state": "Tamil Nadu",
+        "stress_index": 0.27
+      },
+      {
+        "state": "Uttar Pradesh",
+        "stress_index": 0.23
+      },
+      {
+        "state": "Rajasthan",
+        "stress_index": 0.21
+      },
+      {
+        "state": "Odisha",
+        "stress_index": 0.19
+      }
     ],
-    "gdp_drag_pct": 0.4
+    "gdp_drag_pct": 0.17
   }
 }
