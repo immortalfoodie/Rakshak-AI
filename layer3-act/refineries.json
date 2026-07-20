@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Jamnagar (RIL)",
+    "location": "Gujarat",
+    "type": "complex_sour",
+    "capacity_kbpd": 1240,
+    "compatible_grades": ["sour", "sweet"],
+    "description": "The world's largest refining complex, highly complex and optimized for heavy/sour crudes but fully capable of processing sweet crudes."
+  },
+  {
+    "name": "Vadinar (Nayara)",
+    "location": "Gujarat",
+    "type": "complex_sour",
+    "capacity_kbpd": 400,
+    "compatible_grades": ["sour", "sweet"],
+    "description": "High-complexity refinery, optimized for heavy/sour crudes, can handle sweet spot crudes."
+  },
+  {
+    "name": "Paradip (IOCL)",
+    "location": "Odisha",
+    "type": "complex_sour",
+    "capacity_kbpd": 300,
+    "compatible_grades": ["sour", "sweet"],
+    "description": "State-of-the-art public sector refinery on the east coast, highly complex, processes sour and heavy grades."
+  },
+  {
+    "name": "Kochi (BPCL)",
+    "location": "Kerala",
+    "type": "medium_sour",
+    "capacity_kbpd": 310,
+    "compatible_grades": ["sour", "sweet"],
+    "description": "Medium-complexity refinery, optimized for Middle East sour crude but routinely processes sweet grades."
+  },
+  {
+    "name": "Digboi (IOCL)",
+    "location": "Assam",
+    "type": "sweet_only",
+    "capacity_kbpd": 13,
+    "compatible_grades": ["sweet"],
+    "description": "India's oldest refinery, processes only domestic sweet crude from Assam. Incompatible with sour grades."
+  }
+]
