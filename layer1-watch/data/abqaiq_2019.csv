@@ -1,0 +1,10 @@
+date,news_count,sanctions_delta,baseline_keywords,event_notes
+2019-09-09,10,0,12,Normal baseline — quiet period before attack
+2019-09-10,15,0,18,Normal baseline
+2019-09-11,20,1,24,Houthi drone threats reported; first OFAC entry
+2019-09-12,35,2,40,OFAC adds new Iran shipping entities (2 cumulative)
+2019-09-13,55,3,60,Pre-attack tensions; Aramco security alerts; 3 OFAC entries
+2019-09-14,115,4,88,ATTACK DAY: Abqaiq-Khurais drone strike (Sep 14 2019)
+2019-09-15,165,5,130,Post-attack media surge; US blames Iran; 5 OFAC entries
+2019-09-16,180,5,200,PRICE SPIKE: Brent crude +15pct (London market open)
+2019-09-17,170,5,185,Continued coverage; Saudi damage assessment published
