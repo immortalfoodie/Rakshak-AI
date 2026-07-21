@@ -26,7 +26,7 @@ from typing import Optional
 
 import requests
 
-from config import CORRIDORS, POLYMARKET_API, POLYMARKET_TIMEOUT
+from layer1_config import CORRIDORS, POLYMARKET_API, POLYMARKET_TIMEOUT
 
 logger = logging.getLogger(__name__)
 

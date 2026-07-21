@@ -1,3 +1,7 @@
 __pycache__/
 *.pyc
 .env
+.venv*
+node_modules/
+Rakshak-AI/
+frontend/dist/

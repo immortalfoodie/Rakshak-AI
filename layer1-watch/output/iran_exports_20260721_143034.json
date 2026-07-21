@@ -1,6 +1,6 @@
 {
-  "corridor": "hormuz",
-  "timestamp": "2026-07-21T14:29:12Z",
+  "corridor": "iran_exports",
+  "timestamp": "2026-07-21T14:30:34Z",
   "score": 0.0,
   "alert_level": "low",
   "sub_scores": {
@@ -13,9 +13,9 @@
   "evidence": [
     {
       "source": "OFAC",
-      "summary": "No new SDN entries detected for corridor 'hormuz'. Total relevant entries: 3293.",
+      "summary": "No new SDN entries detected for corridor 'iran_exports'. Total relevant entries: 3523.",
       "url": "https://www.treasury.gov/ofac/downloads/sdn.csv",
-      "timestamp": "2026-07-21T14:29:10.874910+00:00"
+      "timestamp": "2026-07-21T14:30:31.942873+00:00"
     }
   ]
 }

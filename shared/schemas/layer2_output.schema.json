@@ -43,7 +43,9 @@
             "required": ["day", "value"],
             "properties": {
               "day": { "type": "integer", "minimum": 0 },
-              "value": { "type": "number" }
+              "value": { "type": "number" },
+              "lower": { "type": "number" },
+              "upper": { "type": "number" }
             }
           }
         },
@@ -83,6 +85,16 @@
         "gdp_drag_pct": {
           "type": "number",
           "description": "Projected national GDP drag as a percentage"
+        },
+        "spr_depletion": {
+          "type": "object",
+          "required": ["current_reserve_volume_mmt", "base_days_of_cover", "drawdown_multiplier", "days_remaining"],
+          "properties": {
+            "current_reserve_volume_mmt": { "type": "number" },
+            "base_days_of_cover": { "type": "number" },
+            "drawdown_multiplier": { "type": "number" },
+            "days_remaining": { "type": "number" }
+          }
         }
       }
     }

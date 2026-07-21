@@ -65,7 +65,13 @@
             { "state": "Uttar Pradesh", "stress_index": 0.45 },
             { "state": "Rajasthan", "stress_index": 0.50 }
           ],
-          "gdp_drag_pct": 0.6
+          "gdp_drag_pct": 0.6,
+          "spr_depletion": {
+            "current_reserve_volume_mmt": 5.33,
+            "base_days_of_cover": 9.5,
+            "drawdown_multiplier": 2.32,
+            "days_remaining": 4.1
+          }
         }
       },
       "layer3": {
@@ -176,7 +182,13 @@
             { "state": "Uttar Pradesh", "stress_index": 0.40 },
             { "state": "Rajasthan", "stress_index": 0.38 }
           ],
-          "gdp_drag_pct": 0.35
+          "gdp_drag_pct": 0.35,
+          "spr_depletion": {
+            "current_reserve_volume_mmt": 5.33,
+            "base_days_of_cover": 9.5,
+            "drawdown_multiplier": 1.98,
+            "days_remaining": 4.8
+          }
         }
       },
       "layer3": {

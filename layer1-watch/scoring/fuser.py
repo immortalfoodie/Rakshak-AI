@@ -27,7 +27,7 @@ Alert thresholds
   ≥ 35 → medium
   <  35 → low
 """
-from config import ALERT_THRESHOLDS, SIGNAL_WEIGHTS
+from layer1_config import ALERT_THRESHOLDS, SIGNAL_WEIGHTS
 
 
 def score_to_alert(score: float) -> str:

@@ -17,9 +17,10 @@ All parameters come from config.py.  All assumption IDs come from assumptions.py
 """
 
 import uuid
+import random
 from datetime import datetime, timezone
 
-from config import (
+from layer2_config import (
     CORRIDOR_GLOBAL_SHARE,
     CORRIDOR_INDIA_SHARE,
     INDIA_IMPORT_DEPENDENCY,
@@ -329,7 +330,27 @@ def compute_gdp_drag(
 
 
 # ─────────────────────────────────────────────
-# 7. CONFIDENCE LEVEL
+# 7. SPR DEPLETION
+# ─────────────────────────────────────────────
+
+def compute_spr_depletion(score: float) -> dict:
+    """
+    Calculates Strategic Petroleum Reserve (SPR) depletion based on risk score.
+    Higher risk = higher drawdown multiplier.
+    """
+    # 0 score = 1.0x multiplier, 100 score = 2.5x multiplier
+    multiplier = 1.0 + (score / 100.0) * 1.5
+    days_remaining = 9.5 / multiplier
+    return {
+        "current_reserve_volume_mmt": 5.33,
+        "base_days_of_cover": 9.5,
+        "drawdown_multiplier": round(multiplier, 2),
+        "days_remaining": round(days_remaining, 1)
+    }
+
+
+# ─────────────────────────────────────────────
+# 8. CONFIDENCE LEVEL
 # ─────────────────────────────────────────────
 
 def score_to_confidence(score: float) -> str:
@@ -341,7 +362,66 @@ def score_to_confidence(score: float) -> str:
 
 
 # ─────────────────────────────────────────────
-# 8. SCENARIO ORCHESTRATOR
+# 9. MONTE CARLO SIMULATION
+# ─────────────────────────────────────────────
+
+def simulate_monte_carlo_brent(
+    disruption_fraction: float,
+    corridor: str,
+    score: float,
+    baseline_brent: float = None,
+    iterations: int = 200,
+) -> list[dict]:
+    """
+    Runs a Monte Carlo simulation (default 200 iterations) to find the 10th and 90th
+    percentile confidence intervals for the Brent price trajectory by perturbing
+    the elasticity and baseline parameters randomly.
+    """
+    if baseline_brent is None:
+        baseline_brent = BASELINE_BRENT_USD
+
+    # 1. Generate the median/baseline trajectory
+    median_traj = disruption_to_brent(disruption_fraction, corridor, score, baseline_brent)
+
+    # 2. Run iterations with perturbed parameters
+    # We will perturb the BRENT_SUPPLY_ELASTICITY (global variable used in disruption_to_brent)
+    # by +/- 20% using a normal distribution.
+    # We'll use a hack to temporarily override the global or just implement the math directly here.
+    # To keep it clean, we'll just run the math directly for the bounds:
+    
+    global_share = CORRIDOR_GLOBAL_SHARE.get(corridor, 0.10)
+    supply_reduction_pct = disruption_fraction * global_share * 100
+    decay = DECAY_SUSTAINED if score >= SUSTAINED_THRESHOLD else DECAY_TRANSIENT
+
+    daily_prices = {day: [] for day in PRICE_TRAJECTORY_DAYS}
+
+    for _ in range(iterations):
+        # Perturb elasticity (std dev of 10% of base)
+        perturbed_elasticity = random.gauss(BRENT_SUPPLY_ELASTICITY, BRENT_SUPPLY_ELASTICITY * 0.10)
+        # Perturb baseline Brent slightly
+        perturbed_baseline = random.gauss(baseline_brent, baseline_brent * 0.05)
+        
+        peak_pct_increase = supply_reduction_pct * perturbed_elasticity
+        
+        for day, multiplier in zip(PRICE_TRAJECTORY_DAYS, decay):
+            delta = perturbed_baseline * (peak_pct_increase / 100.0) * multiplier
+            price = perturbed_baseline + delta
+            daily_prices[day].append(price)
+
+    # 3. Calculate p10 and p90 for each day and merge into median trajectory
+    for point in median_traj:
+        day = point["day"]
+        sorted_prices = sorted(daily_prices[day])
+        p10 = sorted_prices[int(0.10 * iterations)]
+        p90 = sorted_prices[int(0.90 * iterations)]
+        
+        point["lower"] = round(p10, 2)
+        point["upper"] = round(p90, 2)
+
+    return median_traj
+
+# ─────────────────────────────────────────────
+# 10. SCENARIO ORCHESTRATOR
 # ─────────────────────────────────────────────
 
 def run_scenario(
@@ -378,8 +458,8 @@ def run_scenario(
     # Step 1: Score → disruption
     disruption = score_to_disruption(score)
 
-    # Step 2: Disruption → Brent trajectory
-    brent_traj = disruption_to_brent(disruption, corridor, score, baseline_brent)
+    # Step 2: Disruption → Brent trajectory (with real Monte Carlo bounds)
+    brent_traj = simulate_monte_carlo_brent(disruption, corridor, score, baseline_brent)
 
     # Step 3: Brent → INR trajectory
     inr_traj = brent_to_inr(brent_traj, baseline_brent, baseline_inr)
@@ -396,8 +476,11 @@ def run_scenario(
 
     # Step 6: GDP drag
     gdp_drag = compute_gdp_drag(brent_traj, baseline_brent)
+    
+    # Step 7: SPR Depletion
+    spr_depletion = compute_spr_depletion(score)
 
-    # Step 7: Confidence
+    # Step 8: Confidence
     confidence = score_to_confidence(score)
 
     # Build scenario ID
@@ -418,6 +501,7 @@ def run_scenario(
             "domestic_fuel_price_inr_per_liter": fuel_traj,
             "state_impact": state_stress,
             "gdp_drag_pct": gdp_drag,
+            "spr_depletion": spr_depletion,
         },
     }
 

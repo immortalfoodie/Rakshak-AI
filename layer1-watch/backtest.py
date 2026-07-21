@@ -45,7 +45,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 import pandas as pd
 from tabulate import tabulate
 
-from config import DATA_DIR, HIGH_ALERT_THRESHOLD
+from layer1_config import DATA_DIR, HIGH_ALERT_THRESHOLD
 from signals.gdelt_signal import normalize_news_count
 from signals.ofac_signal import normalize_sanctions_delta
 from scoring.fuser import build_sub_scores, fuse, score_to_alert

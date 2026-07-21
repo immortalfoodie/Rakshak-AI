@@ -9,7 +9,7 @@ import pytest
 # Ensure we can import from the layer1-watch directory
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from config import SCHEMA_PATH
+from layer1_config import SCHEMA_PATH
 from scoring.fuser import build_sub_scores, fuse
 
 def test_schema_loads():

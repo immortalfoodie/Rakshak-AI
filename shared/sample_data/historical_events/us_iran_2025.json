@@ -71,7 +71,13 @@
             { "state": "Kerala", "stress_index": 0.55 },
             { "state": "Uttar Pradesh", "stress_index": 0.42 }
           ],
-          "gdp_drag_pct": 0.55
+          "gdp_drag_pct": 0.55,
+          "spr_depletion": {
+            "current_reserve_volume_mmt": 5.33,
+            "base_days_of_cover": 9.5,
+            "drawdown_multiplier": 2.22,
+            "days_remaining": 4.3
+          }
         }
       },
       "layer3": {
@@ -188,7 +194,13 @@
             { "state": "Kerala", "stress_index": 0.48 },
             { "state": "Uttar Pradesh", "stress_index": 0.38 }
           ],
-          "gdp_drag_pct": 0.42
+          "gdp_drag_pct": 0.42,
+          "spr_depletion": {
+            "current_reserve_volume_mmt": 5.33,
+            "base_days_of_cover": 9.5,
+            "drawdown_multiplier": 2.05,
+            "days_remaining": 4.6
+          }
         }
       },
       "layer3": {
@@ -299,7 +311,13 @@
             { "state": "Kerala", "stress_index": 0.35 },
             { "state": "Uttar Pradesh", "stress_index": 0.28 }
           ],
-          "gdp_drag_pct": 0.25
+          "gdp_drag_pct": 0.25,
+          "spr_depletion": {
+            "current_reserve_volume_mmt": 5.33,
+            "base_days_of_cover": 9.5,
+            "drawdown_multiplier": 1.72,
+            "days_remaining": 5.5
+          }
         }
       },
       "layer3": {

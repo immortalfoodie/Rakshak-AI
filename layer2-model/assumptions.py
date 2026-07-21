@@ -238,8 +238,23 @@ ASSUMPTIONS_TABLE = [
             "response, alternative sourcing, and demand elasticity."
         ),
     },
+    {
+        "id": "spr_drawdown_rate",
+        "step": "Supply Disruption → SPR Depletion",
+        "relationship": (
+            "India's Strategic Petroleum Reserve (SPR) provides ~9.5 days of import cover under normal consumption. "
+            "Higher disruption scores proportionally increase the drawdown rate as refiners tap reserves to cover supply gaps."
+        ),
+        "basis": (
+            "Current ISPRL capacity is 5.33 MMT, translating to roughly 9.5 days of national consumption. "
+            "Drawdown speed is constrained by pipeline extraction limits but assumed to linearly scale with import deficit."
+        ),
+        "confidence": "High",
+        "notes": (
+            "Does not account for commercial inventory (which provides ~65 days cover) or Phase II SPR expansion."
+        ),
+    },
 ]
-
 
 def get_assumptions_ids():
     """Return a list of all assumption IDs."""

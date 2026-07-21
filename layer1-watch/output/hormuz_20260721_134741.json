@@ -1,0 +1,14 @@
+{
+  "corridor": "hormuz",
+  "timestamp": "2026-07-21T13:47:41Z",
+  "score": 0.0,
+  "alert_level": "low",
+  "sub_scores": {
+    "news_sentiment": null,
+    "sanctions_delta": null,
+    "ais_dark_fleet": null,
+    "prediction_market": null,
+    "futures_spread": null
+  },
+  "evidence": []
+}

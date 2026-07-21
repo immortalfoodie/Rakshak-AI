@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-20T15:21:38Z",
-  "triggered_by_scenario": "hormuz_partial_closure_30pct",
+  "generated_at": "2026-07-21T14:30:35Z",
+  "triggered_by_scenario": "hormuz_disruption_32pct",
   "recommendations": [
     {
       "source_supplier": "Angola - Girassol",
@@ -48,6 +48,21 @@
       "rank": 3
     },
     {
+      "source_supplier": "UAE - Murban (Fujairah)",
+      "route": "Fujairah -> Jamnagar via Gulf of Oman",
+      "tanker_class": "Suezmax",
+      "tanker_availability": "3 Suezmax tankers available within 24h",
+      "refinery_grade_match": true,
+      "spot_price_usd_per_bbl": 86.14,
+      "cost_delta_vs_baseline_pct": 13.1,
+      "time_to_execute_hours": 153.1,
+      "port_congestion_factor": "medium",
+      "diversification_value": "medium - Middle East source but loaded outside Hormuz",
+      "relationship_cost": "low",
+      "rationale": "Excellent bypass option utilizing Middle East export terminals outside the Gulf (bypasses the disrupted Strait of Hormuz). Extremely fast transit time (6.4 days total) using active long-term agreements with zero sanctions friction, yielding low relationship cost and steady tanker availability.",
+      "rank": 4
+    },
+    {
       "source_supplier": "Russia - ESPO (Far East)",
       "route": "Kozmino -> Paradip via South China Sea & Malacca Strait",
       "tanker_class": "Aframax",
@@ -60,7 +75,22 @@
       "diversification_value": "high - bypasses Middle East entirely",
       "relationship_cost": "medium",
       "rationale": "High-diversification alternative loaded completely outside the Middle East. Shipped via Aframax over 5,200 NM (15.5 days sea voyage). Restructures the supply chain to eliminate Hormuz exposure with zero geopolitical friction, though subject to standard spot premiums.",
-      "rank": 4
+      "rank": 5
+    },
+    {
+      "source_supplier": "Saudi Arabia - Arab Light (Yanbu)",
+      "route": "Yanbu -> Vadinar via Red Sea & Arabian Sea",
+      "tanker_class": "VLCC",
+      "tanker_availability": "2 VLCCs available within 48h",
+      "refinery_grade_match": true,
+      "spot_price_usd_per_bbl": 83.8,
+      "cost_delta_vs_baseline_pct": 13.6,
+      "time_to_execute_hours": 250.6,
+      "port_congestion_factor": "low",
+      "diversification_value": "medium - Middle East source but bypasses Hormuz corridor",
+      "relationship_cost": "low",
+      "rationale": "Excellent bypass option utilizing Middle East export terminals outside the Gulf (bypasses the disrupted Strait of Hormuz). Extremely fast transit time (10.4 days total) using active long-term agreements with zero sanctions friction, yielding low relationship cost and steady tanker availability.",
+      "rank": 6
     },
     {
       "source_supplier": "United States - WTI Midland",
@@ -75,7 +105,52 @@
       "diversification_value": "high - reliable Western Hemisphere alternative",
       "relationship_cost": "low",
       "rationale": "High-diversification alternative loaded completely outside the Middle East. Shipped via VLCC over 12,200 NM (36.3 days sea voyage). Restructures the supply chain to eliminate Hormuz exposure with zero geopolitical friction, though subject to standard spot premiums.",
-      "rank": 5
+      "rank": 7
+    },
+    {
+      "source_supplier": "Russia - Urals (Black Sea)",
+      "route": "Novorossiysk -> Kochi via Suez Canal",
+      "tanker_class": "Suezmax",
+      "tanker_availability": "1 Suezmax tanker available within 72h",
+      "refinery_grade_match": true,
+      "spot_price_usd_per_bbl": 77.75,
+      "cost_delta_vs_baseline_pct": 14.8,
+      "time_to_execute_hours": 444.0,
+      "port_congestion_factor": "medium",
+      "diversification_value": "high - fully independent of Middle East supply routes",
+      "relationship_cost": "high",
+      "rationale": "Highly compatible sour grade that bypasses the disrupted Strait of Hormuz. Shipped via Suezmax in 18.5 days. Offers the highest discount (delivered spot price of $77.75/bbl, differential of $-8.00/bbl), but carries high relationship friction due to G7 sanctions compliance and insurance waiver requirements.",
+      "rank": 8
+    },
+    {
+      "source_supplier": "Russia - Urals (Baltic)",
+      "route": "Primorsk -> Vadinar via Cape of Good Hope",
+      "tanker_class": "Suezmax",
+      "tanker_availability": "2 Suezmax tankers available within 120h",
+      "refinery_grade_match": true,
+      "spot_price_usd_per_bbl": 79.05,
+      "cost_delta_vs_baseline_pct": 14.5,
+      "time_to_execute_hours": 1013.4,
+      "port_congestion_factor": "medium",
+      "diversification_value": "high - fully independent of Middle East supply routes",
+      "relationship_cost": "high",
+      "rationale": "Highly compatible sour grade that bypasses the disrupted Strait of Hormuz. Shipped via Suezmax in 42.2 days. Offers the highest discount (delivered spot price of $79.05/bbl, differential of $-8.00/bbl), but carries high relationship friction due to G7 sanctions compliance and insurance waiver requirements.",
+      "rank": 9
+    },
+    {
+      "source_supplier": "Iraq - Basra Medium",
+      "route": "Basra Terminal -> Vadinar via Strait of Hormuz",
+      "tanker_class": "VLCC",
+      "tanker_availability": "1 VLCC available within 96h due to regional risk",
+      "refinery_grade_match": true,
+      "spot_price_usd_per_bbl": 92.94,
+      "cost_delta_vs_baseline_pct": 28.8,
+      "time_to_execute_hours": 470.7,
+      "port_congestion_factor": "high",
+      "diversification_value": "low - route transits the disrupted Strait of Hormuz",
+      "relationship_cost": "low",
+      "rationale": "Fully compatible with Jamnagar (RIL)'s complex_sour crude configuration. While it uses established contracts, transiting the Strait of Hormuz during this active disruption adds a high risk premium (+$10.80/bbl) and severe transit congestion (+121.0h delay), making it expensive and slow.",
+      "rank": 10
     }
   ]
 }

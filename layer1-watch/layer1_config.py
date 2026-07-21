@@ -23,6 +23,26 @@ CORRIDORS: dict[str, dict] = {
         "ofac_keywords": ["IRAN", "IRGC", "ISLAMIC REVOLUTIONARY GUARD", "SEPAH"],
         # Polymarket market question search terms
         "polymarket_terms": ["Iran", "Hormuz", "Persian Gulf"],
+        # Tickers to pull spread for
+        "futures_tickers": ["CL=F", "BZ=F"],
+        # Synthetic AIS dark fleet zone mapping
+        "ais_zones": ["persian_gulf", "gulf_of_oman"]
+    },
+    "malacca": {
+        "name": "Strait of Malacca",
+        "gdelt_query": '"Strait of Malacca" OR "South China Sea" tanker piracy blockade',
+        "ofac_keywords": ["CHINA", "PIRATE", "MALAYSIA", "INDONESIA"],
+        "polymarket_terms": ["Malacca", "South China Sea"],
+        "futures_tickers": ["CL=F", "BZ=F"],
+        "ais_zones": ["malacca_strait"]
+    },
+    "suez": {
+        "name": "Suez Canal",
+        "gdelt_query": '"Suez Canal" OR "Red Sea" Houthi blockade attack tanker',
+        "ofac_keywords": ["HOUTHI", "YEMEN", "EGYPT"],
+        "polymarket_terms": ["Suez", "Red Sea", "Houthi"],
+        "futures_tickers": ["CL=F", "BZ=F"],
+        "ais_zones": ["red_sea", "suez"]
     },
     "red_sea": {
         "name": "Red Sea / Bab-el-Mandeb",
@@ -67,7 +87,7 @@ HIGH_ALERT_THRESHOLD: float = 70.0
 GDELT_DOC_API = "https://api.gdeltproject.org/api/v2/doc/doc"
 GDELT_TIMESPAN = "1d"        # lookback window for live pipeline runs
 GDELT_MAX_RECORDS = 250      # max articles per query (GDELT API cap)
-GDELT_REQUEST_TIMEOUT = 30   # seconds
+GDELT_REQUEST_TIMEOUT = 5    # seconds (lowered from 30 to fail fast on rate limits)
 
 # Max article count that maps to a news score of 100.
 # 150 relevant articles in 24h = severe, sustained crisis coverage.

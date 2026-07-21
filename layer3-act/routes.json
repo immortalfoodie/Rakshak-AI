@@ -10,10 +10,12 @@
     "tanker_availability_status": "2 VLCCs available within 48h",
     "tanker_lead_time_hours": 48,
     "port_congestion_factor": "low",
-    "base_differential_vs_brent": -1.50,
+    "base_differential_vs_brent": -1.5,
     "relationship_cost": "low",
     "diversification_value": "medium - Middle East source but bypasses Hormuz corridor",
-    "description": "Loaded from the Red Sea terminal of Yanbu via the East-West pipeline, avoiding the Strait of Hormuz completely."
+    "description": "Loaded from the Red Sea terminal of Yanbu via the East-West pipeline, avoiding the Strait of Hormuz completely.",
+    "route_transits_malacca": false,
+    "route_transits_suez": false
   },
   {
     "source_supplier": "UAE - Murban (Fujairah)",
@@ -26,10 +28,12 @@
     "tanker_availability_status": "3 Suezmax tankers available within 24h",
     "tanker_lead_time_hours": 24,
     "port_congestion_factor": "medium",
-    "base_differential_vs_brent": 1.00,
+    "base_differential_vs_brent": 1.0,
     "relationship_cost": "low",
     "diversification_value": "medium - Middle East source but loaded outside Hormuz",
-    "description": "Murban crude piped to Fujairah terminal outside the Persian Gulf, bypassing the Strait of Hormuz."
+    "description": "Murban crude piped to Fujairah terminal outside the Persian Gulf, bypassing the Strait of Hormuz.",
+    "route_transits_malacca": false,
+    "route_transits_suez": false
   },
   {
     "source_supplier": "Iraq - Basra Medium",
@@ -42,10 +46,12 @@
     "tanker_availability_status": "1 VLCC available within 96h due to regional risk",
     "tanker_lead_time_hours": 96,
     "port_congestion_factor": "high",
-    "base_differential_vs_brent": -3.00,
+    "base_differential_vs_brent": -3.0,
     "relationship_cost": "low",
     "diversification_value": "low - route transits the disrupted Strait of Hormuz",
-    "description": "Standard loading from Basra terminal. Highly exposed to Hormuz disruption, incurring heavy risk premiums and shipping delays."
+    "description": "Standard loading from Basra terminal. Highly exposed to Hormuz disruption, incurring heavy risk premiums and shipping delays.",
+    "route_transits_malacca": false,
+    "route_transits_suez": false
   },
   {
     "source_supplier": "Russia - Urals (Baltic)",
@@ -58,10 +64,12 @@
     "tanker_availability_status": "2 Suezmax tankers available within 120h",
     "tanker_lead_time_hours": 120,
     "port_congestion_factor": "medium",
-    "base_differential_vs_brent": -8.00,
+    "base_differential_vs_brent": -8.0,
     "relationship_cost": "high",
     "diversification_value": "high - fully independent of Middle East supply routes",
-    "description": "Urals crude shipped from Primorsk on the Baltic Sea via the Cape route. Subject to significant sanctions oversight and G7 price cap compliance, but highly discounted."
+    "description": "Urals crude shipped from Primorsk on the Baltic Sea via the Cape route. Subject to significant sanctions oversight and G7 price cap compliance, but highly discounted.",
+    "route_transits_malacca": false,
+    "route_transits_suez": false
   },
   {
     "source_supplier": "Russia - Urals (Black Sea)",
@@ -74,10 +82,12 @@
     "tanker_availability_status": "1 Suezmax tanker available within 72h",
     "tanker_lead_time_hours": 72,
     "port_congestion_factor": "medium",
-    "base_differential_vs_brent": -8.00,
+    "base_differential_vs_brent": -8.0,
     "relationship_cost": "high",
     "diversification_value": "high - fully independent of Middle East supply routes",
-    "description": "Urals crude shipped from Novorossiysk on the Black Sea via the Suez Canal. Fast transit, but carries sanctions compliance friction."
+    "description": "Urals crude shipped from Novorossiysk on the Black Sea via the Suez Canal. Fast transit, but carries sanctions compliance friction.",
+    "route_transits_malacca": false,
+    "route_transits_suez": true
   },
   {
     "source_supplier": "Russia - ESPO (Far East)",
@@ -90,10 +100,12 @@
     "tanker_availability_status": "2 Aframax tankers available within 72h",
     "tanker_lead_time_hours": 72,
     "port_congestion_factor": "low",
-    "base_differential_vs_brent": -3.00,
+    "base_differential_vs_brent": -3.0,
     "relationship_cost": "medium",
     "diversification_value": "high - bypasses Middle East entirely",
-    "description": "Eastern Siberia-Pacific Ocean (ESPO) crude loaded at Kozmino. Quick transit to India's East Coast, but limited by smaller tanker class (Aframax) and partial sanctions friction."
+    "description": "Eastern Siberia-Pacific Ocean (ESPO) crude loaded at Kozmino. Quick transit to India's East Coast, but limited by smaller tanker class (Aframax) and partial sanctions friction.",
+    "route_transits_malacca": true,
+    "route_transits_suez": false
   },
   {
     "source_supplier": "Nigeria - Bonny Light",
@@ -106,10 +118,12 @@
     "tanker_availability_status": "2 Suezmax tankers available within 120h",
     "tanker_lead_time_hours": 120,
     "port_congestion_factor": "medium",
-    "base_differential_vs_brent": 1.50,
+    "base_differential_vs_brent": 1.5,
     "relationship_cost": "low",
     "diversification_value": "high - Atlantic basin sourcing completely independent of Middle East",
-    "description": "High quality light sweet crude. Excellent compatibility but subject to spot market price volatility and Cape transit times."
+    "description": "High quality light sweet crude. Excellent compatibility but subject to spot market price volatility and Cape transit times.",
+    "route_transits_malacca": false,
+    "route_transits_suez": false
   },
   {
     "source_supplier": "Angola - Girassol",
@@ -122,10 +136,12 @@
     "tanker_availability_status": "1 Suezmax tanker available within 120h",
     "tanker_lead_time_hours": 120,
     "port_congestion_factor": "low",
-    "base_differential_vs_brent": 0.50,
+    "base_differential_vs_brent": 0.5,
     "relationship_cost": "low",
     "diversification_value": "high - West African source outside geopolitical choke points",
-    "description": "Good grade match for complex refiners requiring medium sweet crudes. Smooth logistics and low geopolitical risk."
+    "description": "Good grade match for complex refiners requiring medium sweet crudes. Smooth logistics and low geopolitical risk.",
+    "route_transits_malacca": false,
+    "route_transits_suez": false
   },
   {
     "source_supplier": "United States - WTI Midland",
@@ -138,10 +154,12 @@
     "tanker_availability_status": "2 VLCCs available within 144h",
     "tanker_lead_time_hours": 144,
     "port_congestion_factor": "low",
-    "base_differential_vs_brent": -1.00,
+    "base_differential_vs_brent": -1.0,
     "relationship_cost": "low",
     "diversification_value": "high - reliable Western Hemisphere alternative",
-    "description": "Abundant light sweet crude. Extremely stable supply chain and low transaction friction, but has the longest shipping route."
+    "description": "Abundant light sweet crude. Extremely stable supply chain and low transaction friction, but has the longest shipping route.",
+    "route_transits_malacca": false,
+    "route_transits_suez": false
   },
   {
     "source_supplier": "Brazil - Tupi",
@@ -154,9 +172,11 @@
     "tanker_availability_status": "1 VLCC available within 168h",
     "tanker_lead_time_hours": 168,
     "port_congestion_factor": "low",
-    "base_differential_vs_brent": 0.00,
+    "base_differential_vs_brent": 0.0,
     "relationship_cost": "low",
     "diversification_value": "high - Latin American supply outside Middle East risk",
-    "description": "Highly liquid Brazilian medium sweet crude. Good match for blending or direct processing in complex refineries."
+    "description": "Highly liquid Brazilian medium sweet crude. Good match for blending or direct processing in complex refineries.",
+    "route_transits_malacca": false,
+    "route_transits_suez": false
   }
 ]

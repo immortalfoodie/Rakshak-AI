@@ -33,7 +33,7 @@ from typing import Optional
 
 import requests
 
-from config import (
+from layer1_config import (
     CORRIDORS,
     OFAC_CACHE_FILE,
     OFAC_REQUEST_TIMEOUT,
@@ -81,12 +81,19 @@ def _save_cache(data: dict) -> None:
 
 # ── SDN parsing ───────────────────────────────────────────────────────────────
 
+_IN_MEMORY_CSV = None
+
 def _download_sdn(url: str) -> Optional[str]:
     """Download OFAC SDN CSV text. Returns None on any network failure."""
+    global _IN_MEMORY_CSV
+    if _IN_MEMORY_CSV is not None:
+        return _IN_MEMORY_CSV
+        
     try:
         resp = requests.get(url, timeout=OFAC_REQUEST_TIMEOUT)
         resp.raise_for_status()
-        return resp.text
+        _IN_MEMORY_CSV = resp.text
+        return _IN_MEMORY_CSV
     except requests.RequestException as exc:
         logger.warning("OFAC SDN download failed: %s", exc)
         return None

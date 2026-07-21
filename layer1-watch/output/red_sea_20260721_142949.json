@@ -1,6 +1,6 @@
 {
-  "corridor": "hormuz",
-  "timestamp": "2026-07-21T14:29:12Z",
+  "corridor": "red_sea",
+  "timestamp": "2026-07-21T14:29:49Z",
   "score": 0.0,
   "alert_level": "low",
   "sub_scores": {
@@ -13,9 +13,9 @@
   "evidence": [
     {
       "source": "OFAC",
-      "summary": "No new SDN entries detected for corridor 'hormuz'. Total relevant entries: 3293.",
+      "summary": "No new SDN entries detected for corridor 'red_sea'. Total relevant entries: 3300.",
       "url": "https://www.treasury.gov/ofac/downloads/sdn.csv",
-      "timestamp": "2026-07-21T14:29:10.874910+00:00"
+      "timestamp": "2026-07-21T14:29:47.746382+00:00"
     }
   ]
 }

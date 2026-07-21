@@ -29,7 +29,7 @@ from typing import Optional
 
 import requests
 
-from config import (
+from layer1_config import (
     CORRIDORS,
     GDELT_DOC_API,
     GDELT_MAX_COUNT_FOR_100,
@@ -150,11 +150,25 @@ def fetch_live(
         except ValueError:
             ts = datetime.now(timezone.utc).isoformat()
 
+        title = article.get("title") or "No title"
+        
+        # Extract keywords for explainability trail
+        matched_keywords = [kw for kw in NEGATIVE_KEYWORDS if kw in title.lower()]
+        
+        if len(matched_keywords) > 2:
+            severity = "HIGH"
+        elif len(matched_keywords) > 0:
+            severity = "MEDIUM"
+        else:
+            severity = "LOW"
+
         evidence.append({
             "source": "GDELT",
-            "summary": (article.get("title") or "No title")[:250],
+            "summary": title[:250],
             "url": article.get("url", ""),
             "timestamp": ts,
+            "severity_tag": severity,
+            "extracted_keywords": matched_keywords
         })
 
     return score, evidence

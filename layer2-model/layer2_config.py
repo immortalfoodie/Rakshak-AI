@@ -19,6 +19,8 @@ CORRIDOR_GLOBAL_SHARE = {
     "hormuz": 0.20,       # ~20 mbpd through Hormuz out of ~100 mbpd global
     "red_sea": 0.12,      # ~12 mbpd through Bab el-Mandeb / Suez
     "iran_exports": 0.03, # Iran's own exports ~3 mbpd
+    "malacca": 0.16,
+    "suez": 0.12,
 }
 
 # How much of *India's* crude imports come through each corridor.
@@ -29,6 +31,8 @@ CORRIDOR_INDIA_SHARE = {
     "hormuz": 0.30,
     "red_sea": 0.10,
     "iran_exports": 0.04,
+    "malacca": 0.05,
+    "suez": 0.10,
 }
 
 # India's crude oil import dependency (fraction).
@@ -105,7 +109,7 @@ SUSTAINED_THRESHOLD = 80
 # ─────────────────────────────────────────────
 
 # Baseline INR/USD rate before disruption.
-BASELINE_INR_USD = 85.50  # mid-2026 rate
+BASELINE_INR_USD = 96.00  # mid-2026 rate
 
 # Elasticity: for every 10% rise in Brent, INR depreciates by X%.
 # Based on RBI research papers and historical analysis:

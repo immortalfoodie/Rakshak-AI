@@ -33,11 +33,11 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 # Allow direct execution from the layer1-watch directory
-sys.path.insert(0, str(Path(__file__).parent))
+# sys.path.insert(0, str(Path(__file__).parent))
 
 import jsonschema
 
-from config import CORRIDORS, MOCK_OUTPUT_PATH, OUTPUT_DIR, SCHEMA_PATH
+from layer1_config import CORRIDORS, MOCK_OUTPUT_PATH, OUTPUT_DIR, SCHEMA_PATH
 from signals import gdelt_signal, ofac_signal, polymarket_signal
 from scoring.fuser import build_sub_scores, fuse
 
