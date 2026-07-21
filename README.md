@@ -1,6 +1,6 @@
 <div align="center">
-  # Rakshak AI 🛡️
-  **Strategic Energy Intelligence & Supply Chain Resilience Dashboard**
+  <h1>Rakshak AI 🛡️</h1>
+  <strong>Strategic Energy Intelligence & Supply Chain Resilience Dashboard</strong>
 
   [![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)](https://fastapi.tiangolo.com/)
   [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
