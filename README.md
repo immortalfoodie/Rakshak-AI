@@ -1,6 +1,4 @@
 <div align="center">
-  <img src="frontend/public/icons.svg" alt="Rakshak AI Logo" width="120" />
-  
   # Rakshak AI 🛡️
   **Strategic Energy Intelligence & Supply Chain Resilience Dashboard**
 
