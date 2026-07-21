@@ -4,7 +4,7 @@ import 'leaflet/dist/leaflet.css';
 import { motion } from 'framer-motion';
 
 // Component to dynamically set bounds based on routes
-function ChangeView({ routes, center }: { routes: any[], center: [number, number] }) {
+function ChangeView({ center }: { center: [number, number] }) {
   const map = useMap();
   useEffect(() => {
     // Smoothly fly to the corridor's coordinates
@@ -68,7 +68,7 @@ export default function MapComponent({ corridor, routes = [], approved = false }
         scrollWheelZoom={false}
         className="w-full h-full bg-zinc-900"
       >
-        <ChangeView routes={routes} center={center} />
+        <ChangeView center={center} />
         {/* Dark theme tile layer */}
         <TileLayer
           attribution='&copy; <a href="https://carto.com/">CARTO</a>'

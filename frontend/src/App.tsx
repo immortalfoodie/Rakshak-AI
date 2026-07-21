@@ -145,8 +145,8 @@ export default function App() {
   };
 
   // Prepare chart data
-  let brentProjections = [];
-  let signalData = [];
+  let brentProjections: any[] = [];
+  let signalData: any[] = [];
   
   if (data) {
     brentProjections = data.layer2?.projections?.brent_price_usd?.map((p: any) => ({
