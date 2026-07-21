@@ -1,0 +1,358 @@
+{
+  "event_id": "us_iran_2025",
+  "event_name": "US–Iran Strait Escalation (Jan 2025)",
+  "description": "Heightened US–Iran military posturing in the Strait of Hormuz and Red Sea following IRGC seizure of a commercial tanker, triggering EU sanctions and Houthi retaliatory strikes.",
+  "steps": [
+    {
+      "step": 1,
+      "delay_seconds": 2,
+      "layer1": {
+        "corridor": "red_sea",
+        "timestamp": "2025-01-12T08:00:00Z",
+        "score": 81,
+        "alert_level": "critical",
+        "sub_scores": {
+          "news_sentiment": 88,
+          "sanctions_delta": 55,
+          "ais_dark_fleet": 78,
+          "prediction_market": 85,
+          "futures_spread": 72
+        },
+        "evidence": [
+          {
+            "source": "GDELT",
+            "summary": "IRGC Navy seizes Greek-flagged tanker in Strait of Hormuz; US Fifth Fleet raises alert level",
+            "url": "https://example.com/irgc-seizure",
+            "timestamp": "2025-01-12T07:30:00Z"
+          },
+          {
+            "source": "AIS",
+            "summary": "Multiple commercial vessels diverting from Bab el-Mandeb to Cape of Good Hope route; transit volume down 40%",
+            "url": "",
+            "timestamp": "2025-01-12T06:00:00Z"
+          },
+          {
+            "source": "Polymarket",
+            "summary": "Prediction market prices Hormuz disruption probability at 38% within 30 days",
+            "url": "https://example.com/polymarket-hormuz",
+            "timestamp": "2025-01-12T07:00:00Z"
+          }
+        ]
+      },
+      "layer2": {
+        "scenario_id": "red_sea_diversion_2025",
+        "trigger_corridor": "red_sea",
+        "trigger_score": 81,
+        "timestamp": "2025-01-12T08:05:00Z",
+        "confidence": "high",
+        "assumptions_used": ["red_sea_closure_partial", "cape_route_premium", "inr_passthrough_lag", "fuel_price_stickiness"],
+        "projections": {
+          "brent_price_usd": [
+            { "day": 0, "value": 79.0 },
+            { "day": 1, "value": 84.5 },
+            { "day": 3, "value": 88.0 },
+            { "day": 7, "value": 91.5 },
+            { "day": 14, "value": 89.0 }
+          ],
+          "inr_usd_rate": [
+            { "day": 0, "value": 83.5 },
+            { "day": 7, "value": 84.8 },
+            { "day": 14, "value": 85.3 }
+          ],
+          "domestic_fuel_price_inr_per_liter": [
+            { "day": 0, "value": 95.0 },
+            { "day": 7, "value": 98.5 },
+            { "day": 14, "value": 100.8 }
+          ],
+          "state_impact": [
+            { "state": "Gujarat", "stress_index": 0.85 },
+            { "state": "Maharashtra", "stress_index": 0.68 },
+            { "state": "Tamil Nadu", "stress_index": 0.60 },
+            { "state": "Kerala", "stress_index": 0.55 },
+            { "state": "Uttar Pradesh", "stress_index": 0.42 }
+          ],
+          "gdp_drag_pct": 0.55
+        }
+      },
+      "layer3": {
+        "generated_at": "2025-01-12T08:06:30Z",
+        "triggered_by_scenario": "red_sea_diversion_2025",
+        "recommendations": [
+          {
+            "rank": 1,
+            "source_supplier": "Iraq - Basra",
+            "route": "Basra -> Vadinar via Arabian Sea (non-Hormuz)",
+            "tanker_class": "VLCC",
+            "tanker_availability": "4 available within 60h",
+            "refinery_grade_match": true,
+            "spot_price_usd_per_bbl": 76.0,
+            "cost_delta_vs_baseline_pct": 3.8,
+            "time_to_execute_hours": 84,
+            "port_congestion_factor": "low",
+            "diversification_value": "medium",
+            "relationship_cost": "low - existing supplier relationship",
+            "rationale": "Direct Arabian Sea routing bypasses both Red Sea and Hormuz choke points at modest premium"
+          },
+          {
+            "rank": 2,
+            "source_supplier": "Nigeria - Bonny Light",
+            "route": "Bonny -> Jamnagar via Cape of Good Hope",
+            "tanker_class": "Suezmax",
+            "tanker_availability": "3 available within 96h",
+            "refinery_grade_match": true,
+            "spot_price_usd_per_bbl": 80.5,
+            "cost_delta_vs_baseline_pct": 7.5,
+            "time_to_execute_hours": 168,
+            "port_congestion_factor": "medium",
+            "diversification_value": "high - fully independent of Middle East corridors",
+            "relationship_cost": "medium - new spot arrangement",
+            "rationale": "Completely avoids both choke points; premium offset by diversification benefit"
+          },
+          {
+            "rank": 3,
+            "source_supplier": "United States - WTI Midland",
+            "route": "Houston -> Paradip via Cape of Good Hope",
+            "tanker_class": "VLCC",
+            "tanker_availability": "2 available within 120h",
+            "refinery_grade_match": true,
+            "spot_price_usd_per_bbl": 82.0,
+            "cost_delta_vs_baseline_pct": 8.8,
+            "time_to_execute_hours": 192,
+            "port_congestion_factor": "low",
+            "diversification_value": "high - fully independent of Middle East corridors",
+            "relationship_cost": "low - established trade relationship",
+            "rationale": "Highest geographic diversification but longest lead time; ideal as a medium-term hedge"
+          }
+        ]
+      }
+    },
+    {
+      "step": 2,
+      "delay_seconds": 3,
+      "layer1": {
+        "corridor": "hormuz",
+        "timestamp": "2025-01-14T12:00:00Z",
+        "score": 74,
+        "alert_level": "high",
+        "sub_scores": {
+          "news_sentiment": 75,
+          "sanctions_delta": 60,
+          "ais_dark_fleet": 80,
+          "prediction_market": 70,
+          "futures_spread": 65
+        },
+        "evidence": [
+          {
+            "source": "Reuters",
+            "summary": "EU announces new sanctions on Iranian petrochemical sector; US carrier group repositioned near Strait",
+            "url": "https://example.com/eu-sanctions",
+            "timestamp": "2025-01-14T10:00:00Z"
+          },
+          {
+            "source": "AIS",
+            "summary": "Dark fleet activity increases — 12 transponder gaps detected in Hormuz transit zone in 24h",
+            "url": "",
+            "timestamp": "2025-01-14T11:00:00Z"
+          }
+        ]
+      },
+      "layer2": {
+        "scenario_id": "hormuz_sanctions_escalation",
+        "trigger_corridor": "hormuz",
+        "trigger_score": 74,
+        "timestamp": "2025-01-14T12:05:00Z",
+        "confidence": "medium",
+        "assumptions_used": ["hormuz_to_brent_elasticity", "sanctions_tightening_effect", "inr_passthrough_lag"],
+        "projections": {
+          "brent_price_usd": [
+            { "day": 0, "value": 89.0 },
+            { "day": 1, "value": 90.5 },
+            { "day": 3, "value": 92.0 },
+            { "day": 7, "value": 90.0 },
+            { "day": 14, "value": 87.0 }
+          ],
+          "inr_usd_rate": [
+            { "day": 0, "value": 84.8 },
+            { "day": 7, "value": 85.0 },
+            { "day": 14, "value": 84.5 }
+          ],
+          "domestic_fuel_price_inr_per_liter": [
+            { "day": 0, "value": 98.5 },
+            { "day": 7, "value": 99.8 },
+            { "day": 14, "value": 99.0 }
+          ],
+          "state_impact": [
+            { "state": "Gujarat", "stress_index": 0.78 },
+            { "state": "Maharashtra", "stress_index": 0.62 },
+            { "state": "Tamil Nadu", "stress_index": 0.52 },
+            { "state": "Kerala", "stress_index": 0.48 },
+            { "state": "Uttar Pradesh", "stress_index": 0.38 }
+          ],
+          "gdp_drag_pct": 0.42
+        }
+      },
+      "layer3": {
+        "generated_at": "2025-01-14T12:06:30Z",
+        "triggered_by_scenario": "hormuz_sanctions_escalation",
+        "recommendations": [
+          {
+            "rank": 1,
+            "source_supplier": "Iraq - Basra",
+            "route": "Basra -> Vadinar via Arabian Sea",
+            "tanker_class": "VLCC",
+            "tanker_availability": "3 available within 72h",
+            "refinery_grade_match": true,
+            "spot_price_usd_per_bbl": 77.5,
+            "cost_delta_vs_baseline_pct": 5.0,
+            "time_to_execute_hours": 96,
+            "port_congestion_factor": "medium",
+            "diversification_value": "medium",
+            "relationship_cost": "low",
+            "rationale": "Continued best option despite medium congestion at Vadinar"
+          },
+          {
+            "rank": 2,
+            "source_supplier": "Saudi Arabia - Arab Light",
+            "route": "Ras Tanura -> Mumbai High via Arabian Sea",
+            "tanker_class": "VLCC",
+            "tanker_availability": "2 available within 96h",
+            "refinery_grade_match": true,
+            "spot_price_usd_per_bbl": 79.0,
+            "cost_delta_vs_baseline_pct": 5.8,
+            "time_to_execute_hours": 108,
+            "port_congestion_factor": "low",
+            "diversification_value": "low - same Gulf region",
+            "relationship_cost": "low",
+            "rationale": "Saudi supply unaffected by Iran sanctions; Arabian Sea route avoids Hormuz"
+          },
+          {
+            "rank": 3,
+            "source_supplier": "Guyana - Liza Light",
+            "route": "Georgetown -> Paradip via Cape of Good Hope",
+            "tanker_class": "Suezmax",
+            "tanker_availability": "1 available within 144h",
+            "refinery_grade_match": true,
+            "spot_price_usd_per_bbl": 81.0,
+            "cost_delta_vs_baseline_pct": 8.5,
+            "time_to_execute_hours": 216,
+            "port_congestion_factor": "low",
+            "diversification_value": "high - new Western Hemisphere source",
+            "relationship_cost": "high - new supplier, no existing contract",
+            "rationale": "Emerging supplier option for long-term diversification strategy"
+          }
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "delay_seconds": 3,
+      "layer1": {
+        "corridor": "hormuz",
+        "timestamp": "2025-01-18T09:00:00Z",
+        "score": 55,
+        "alert_level": "medium",
+        "sub_scores": {
+          "news_sentiment": 50,
+          "sanctions_delta": 60,
+          "ais_dark_fleet": 65,
+          "prediction_market": 48,
+          "futures_spread": 50
+        },
+        "evidence": [
+          {
+            "source": "Reuters",
+            "summary": "Diplomatic backchannel reports suggest de-escalation; seized tanker crew released",
+            "url": "https://example.com/deescalation",
+            "timestamp": "2025-01-18T08:00:00Z"
+          }
+        ]
+      },
+      "layer2": {
+        "scenario_id": "hormuz_deescalation",
+        "trigger_corridor": "hormuz",
+        "trigger_score": 55,
+        "timestamp": "2025-01-18T09:05:00Z",
+        "confidence": "medium",
+        "assumptions_used": ["hormuz_to_brent_elasticity", "deescalation_premium_decay"],
+        "projections": {
+          "brent_price_usd": [
+            { "day": 0, "value": 87.0 },
+            { "day": 1, "value": 84.0 },
+            { "day": 3, "value": 82.0 },
+            { "day": 7, "value": 80.0 },
+            { "day": 14, "value": 79.0 }
+          ],
+          "inr_usd_rate": [
+            { "day": 0, "value": 84.5 },
+            { "day": 7, "value": 84.0 },
+            { "day": 14, "value": 83.5 }
+          ],
+          "domestic_fuel_price_inr_per_liter": [
+            { "day": 0, "value": 99.0 },
+            { "day": 7, "value": 97.5 },
+            { "day": 14, "value": 96.0 }
+          ],
+          "state_impact": [
+            { "state": "Gujarat", "stress_index": 0.55 },
+            { "state": "Maharashtra", "stress_index": 0.45 },
+            { "state": "Tamil Nadu", "stress_index": 0.38 },
+            { "state": "Kerala", "stress_index": 0.35 },
+            { "state": "Uttar Pradesh", "stress_index": 0.28 }
+          ],
+          "gdp_drag_pct": 0.25
+        }
+      },
+      "layer3": {
+        "generated_at": "2025-01-18T09:06:30Z",
+        "triggered_by_scenario": "hormuz_deescalation",
+        "recommendations": [
+          {
+            "rank": 1,
+            "source_supplier": "Iraq - Basra",
+            "route": "Basra -> Vadinar via Arabian Sea",
+            "tanker_class": "VLCC",
+            "tanker_availability": "5 available within 48h",
+            "refinery_grade_match": true,
+            "spot_price_usd_per_bbl": 74.0,
+            "cost_delta_vs_baseline_pct": 2.5,
+            "time_to_execute_hours": 72,
+            "port_congestion_factor": "low",
+            "diversification_value": "medium",
+            "relationship_cost": "low",
+            "rationale": "De-escalation reduces urgency; standard procurement resuming at near-baseline prices"
+          },
+          {
+            "rank": 2,
+            "source_supplier": "Saudi Arabia - Arab Light",
+            "route": "Ras Tanura -> Mumbai High via Arabian Sea",
+            "tanker_class": "VLCC",
+            "tanker_availability": "4 available within 72h",
+            "refinery_grade_match": true,
+            "spot_price_usd_per_bbl": 75.0,
+            "cost_delta_vs_baseline_pct": 3.5,
+            "time_to_execute_hours": 96,
+            "port_congestion_factor": "low",
+            "diversification_value": "low",
+            "relationship_cost": "low",
+            "rationale": "Traditional supplier with restored confidence; minimal premium"
+          },
+          {
+            "rank": 3,
+            "source_supplier": "UAE - Murban",
+            "route": "Fujairah -> Mangalore via Arabian Sea",
+            "tanker_class": "Aframax",
+            "tanker_availability": "3 available within 60h",
+            "refinery_grade_match": true,
+            "spot_price_usd_per_bbl": 75.5,
+            "cost_delta_vs_baseline_pct": 4.0,
+            "time_to_execute_hours": 84,
+            "port_congestion_factor": "low",
+            "diversification_value": "low",
+            "relationship_cost": "low",
+            "rationale": "Fujairah hub offers flexibility; good backup option"
+          }
+        ]
+      }
+    }
+  ]
+}

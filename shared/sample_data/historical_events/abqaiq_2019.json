@@ -1,0 +1,235 @@
+{
+  "event_id": "abqaiq_2019",
+  "event_name": "Abqaiq–Khurais Attack (Sep 2019)",
+  "description": "Drone and missile attack on Saudi Aramco facilities at Abqaiq and Khurais, temporarily halving Saudi oil output (~5.7 million bpd disrupted).",
+  "steps": [
+    {
+      "step": 1,
+      "delay_seconds": 2,
+      "layer1": {
+        "corridor": "hormuz",
+        "timestamp": "2019-09-14T03:00:00Z",
+        "score": 88,
+        "alert_level": "critical",
+        "sub_scores": {
+          "news_sentiment": 92,
+          "sanctions_delta": 30,
+          "ais_dark_fleet": 75,
+          "prediction_market": 90,
+          "futures_spread": 88
+        },
+        "evidence": [
+          {
+            "source": "GDELT",
+            "summary": "Drone/missile attack on Saudi Aramco's Abqaiq processing facility, halving Saudi production",
+            "url": "https://example.com/abqaiq-attack",
+            "timestamp": "2019-09-14T03:00:00Z"
+          },
+          {
+            "source": "AIS",
+            "summary": "VLCC loadings at Ras Tanura and Juaymah terminals suspended; multiple tankers holding offshore",
+            "url": "",
+            "timestamp": "2019-09-14T06:00:00Z"
+          }
+        ]
+      },
+      "layer2": {
+        "scenario_id": "abqaiq_supply_shock",
+        "trigger_corridor": "hormuz",
+        "trigger_score": 88,
+        "timestamp": "2019-09-14T03:05:00Z",
+        "confidence": "high",
+        "assumptions_used": ["saudi_spare_capacity_zero", "hormuz_to_brent_elasticity", "inr_passthrough_lag"],
+        "projections": {
+          "brent_price_usd": [
+            { "day": 0, "value": 60.2 },
+            { "day": 1, "value": 71.9 },
+            { "day": 3, "value": 68.5 },
+            { "day": 7, "value": 64.5 },
+            { "day": 14, "value": 62.4 }
+          ],
+          "inr_usd_rate": [
+            { "day": 0, "value": 71.8 },
+            { "day": 7, "value": 72.3 },
+            { "day": 14, "value": 72.0 }
+          ],
+          "domestic_fuel_price_inr_per_liter": [
+            { "day": 0, "value": 73.6 },
+            { "day": 7, "value": 75.2 },
+            { "day": 14, "value": 74.1 }
+          ],
+          "state_impact": [
+            { "state": "Gujarat", "stress_index": 0.90 },
+            { "state": "Maharashtra", "stress_index": 0.72 },
+            { "state": "Tamil Nadu", "stress_index": 0.58 },
+            { "state": "Uttar Pradesh", "stress_index": 0.45 },
+            { "state": "Rajasthan", "stress_index": 0.50 }
+          ],
+          "gdp_drag_pct": 0.6
+        }
+      },
+      "layer3": {
+        "generated_at": "2019-09-14T03:06:30Z",
+        "triggered_by_scenario": "abqaiq_supply_shock",
+        "recommendations": [
+          {
+            "rank": 1,
+            "source_supplier": "Iraq - Basra",
+            "route": "Basra -> Vadinar via Arabian Sea",
+            "tanker_class": "VLCC",
+            "tanker_availability": "5 available within 48h",
+            "refinery_grade_match": true,
+            "spot_price_usd_per_bbl": 63.0,
+            "cost_delta_vs_baseline_pct": 4.6,
+            "time_to_execute_hours": 72,
+            "port_congestion_factor": "low",
+            "diversification_value": "medium - same region but different source",
+            "relationship_cost": "low - existing supplier relationship",
+            "rationale": "Iraq unaffected by attack; existing supply contract and compatible crude grade make this the fastest swap option"
+          },
+          {
+            "rank": 2,
+            "source_supplier": "UAE - Murban",
+            "route": "Fujairah -> Mumbai High via Arabian Sea",
+            "tanker_class": "Suezmax",
+            "tanker_availability": "3 available within 72h",
+            "refinery_grade_match": true,
+            "spot_price_usd_per_bbl": 64.5,
+            "cost_delta_vs_baseline_pct": 7.1,
+            "time_to_execute_hours": 96,
+            "port_congestion_factor": "medium",
+            "diversification_value": "low - same Gulf region",
+            "relationship_cost": "low - active trade partner",
+            "rationale": "Fujairah storage hub allows quick loading outside Hormuz, moderate premium"
+          },
+          {
+            "rank": 3,
+            "source_supplier": "United States - WTI Midland",
+            "route": "Houston -> Paradip via Cape of Good Hope",
+            "tanker_class": "VLCC",
+            "tanker_availability": "2 available within 120h",
+            "refinery_grade_match": true,
+            "spot_price_usd_per_bbl": 66.0,
+            "cost_delta_vs_baseline_pct": 9.6,
+            "time_to_execute_hours": 192,
+            "port_congestion_factor": "low",
+            "diversification_value": "high - fully independent of Middle East",
+            "relationship_cost": "medium - new spot arrangement",
+            "rationale": "Longest lead time but maximum geographic diversification from Gulf disruption"
+          }
+        ]
+      }
+    },
+    {
+      "step": 2,
+      "delay_seconds": 3,
+      "layer1": {
+        "corridor": "hormuz",
+        "timestamp": "2019-09-15T06:00:00Z",
+        "score": 78,
+        "alert_level": "high",
+        "sub_scores": {
+          "news_sentiment": 80,
+          "sanctions_delta": 30,
+          "ais_dark_fleet": 70,
+          "prediction_market": 82,
+          "futures_spread": 76
+        },
+        "evidence": [
+          {
+            "source": "Reuters",
+            "summary": "Saudi Aramco reports partial restoration timeline of 2-3 weeks; global SPR release discussions underway",
+            "url": "https://example.com/aramco-restore",
+            "timestamp": "2019-09-15T05:00:00Z"
+          }
+        ]
+      },
+      "layer2": {
+        "scenario_id": "abqaiq_partial_restore",
+        "trigger_corridor": "hormuz",
+        "trigger_score": 78,
+        "timestamp": "2019-09-15T06:05:00Z",
+        "confidence": "medium",
+        "assumptions_used": ["saudi_restore_2wk", "spr_release_partial", "inr_passthrough_lag"],
+        "projections": {
+          "brent_price_usd": [
+            { "day": 0, "value": 68.5 },
+            { "day": 1, "value": 66.0 },
+            { "day": 3, "value": 64.0 },
+            { "day": 7, "value": 63.0 },
+            { "day": 14, "value": 62.0 }
+          ],
+          "inr_usd_rate": [
+            { "day": 0, "value": 72.3 },
+            { "day": 7, "value": 72.1 },
+            { "day": 14, "value": 71.9 }
+          ],
+          "domestic_fuel_price_inr_per_liter": [
+            { "day": 0, "value": 75.2 },
+            { "day": 7, "value": 74.5 },
+            { "day": 14, "value": 73.8 }
+          ],
+          "state_impact": [
+            { "state": "Gujarat", "stress_index": 0.75 },
+            { "state": "Maharashtra", "stress_index": 0.60 },
+            { "state": "Tamil Nadu", "stress_index": 0.48 },
+            { "state": "Uttar Pradesh", "stress_index": 0.40 },
+            { "state": "Rajasthan", "stress_index": 0.38 }
+          ],
+          "gdp_drag_pct": 0.35
+        }
+      },
+      "layer3": {
+        "generated_at": "2019-09-15T06:06:30Z",
+        "triggered_by_scenario": "abqaiq_partial_restore",
+        "recommendations": [
+          {
+            "rank": 1,
+            "source_supplier": "Iraq - Basra",
+            "route": "Basra -> Vadinar via Arabian Sea",
+            "tanker_class": "VLCC",
+            "tanker_availability": "4 available within 48h",
+            "refinery_grade_match": true,
+            "spot_price_usd_per_bbl": 62.0,
+            "cost_delta_vs_baseline_pct": 3.0,
+            "time_to_execute_hours": 72,
+            "port_congestion_factor": "low",
+            "diversification_value": "medium",
+            "relationship_cost": "low",
+            "rationale": "Situation stabilizing; Iraq remains best short-term swap at lower premium"
+          },
+          {
+            "rank": 2,
+            "source_supplier": "Nigeria - Bonny Light",
+            "route": "Bonny -> Jamnagar via Cape of Good Hope",
+            "tanker_class": "Suezmax",
+            "tanker_availability": "2 available within 120h",
+            "refinery_grade_match": true,
+            "spot_price_usd_per_bbl": 65.0,
+            "cost_delta_vs_baseline_pct": 7.9,
+            "time_to_execute_hours": 168,
+            "port_congestion_factor": "medium",
+            "diversification_value": "high",
+            "relationship_cost": "medium",
+            "rationale": "Good diversification play if Saudi restoration takes longer than expected"
+          },
+          {
+            "rank": 3,
+            "source_supplier": "Russia - Urals",
+            "route": "Novorossiysk -> Paradip via Suez Canal",
+            "tanker_class": "Aframax",
+            "tanker_availability": "3 available within 96h",
+            "refinery_grade_match": true,
+            "spot_price_usd_per_bbl": 61.5,
+            "cost_delta_vs_baseline_pct": 2.2,
+            "time_to_execute_hours": 144,
+            "port_congestion_factor": "low",
+            "diversification_value": "high",
+            "relationship_cost": "low",
+            "rationale": "Lowest cost option with pre-2022 trade relationship intact"
+          }
+        ]
+      }
+    }
+  ]
+}
