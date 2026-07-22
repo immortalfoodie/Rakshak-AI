@@ -80,8 +80,25 @@ def run_ranking(
         # A. Grade compatibility hard filter
         is_compatible = crude_grade in refinery_profile["compatible_grades"]
         
-        # Skip if incompatible
+        # Log and record if incompatible
         if not is_compatible:
+            rejection_reason = f"REJECTED: crude_grade '{crude_grade}' is incompatible with refinery '{refinery_profile['name']}' which only accepts {refinery_profile['compatible_grades']}."
+            print(f"[CONSTRAINT FAILURE] {route_info['source_supplier']}: {rejection_reason}")
+            processed_options.append({
+                "source_supplier": route_info["source_supplier"],
+                "route": route_info["route"],
+                "tanker_class": route_info["tanker_class"],
+                "tanker_availability": route_info.get("tanker_availability_status", "unknown"),
+                "refinery_grade_match": False,
+                "spot_price_usd_per_bbl": None,
+                "cost_delta_vs_baseline_pct": None,
+                "time_to_execute_hours": None,
+                "port_congestion_factor": route_info.get("port_congestion_factor", "unknown"),
+                "diversification_value": route_info.get("diversification_value", "unknown"),
+                "relationship_cost": route_info.get("relationship_cost", "unknown"),
+                "rationale": rejection_reason,
+                "final_score": -9999.0
+            })
             continue
             
         # B. Calculate delivered spot price
@@ -183,11 +200,14 @@ def run_ranking(
         
     processed_options.sort(key=lambda x: x["final_score"], reverse=True)
     
-    # Keep only the top 5 recommendations
-    processed_options = processed_options[:5]
+    # Keep only the top 5 valid recommendations + any explicit rejections
+    valid_recs = [opt for opt in processed_options if opt["refinery_grade_match"]]
+    rejected_recs = [opt for opt in processed_options if not opt["refinery_grade_match"]]
+    
+    final_options = valid_recs[:5] + rejected_recs
     
     recommendations_list = []
-    for rank_idx, opt in enumerate(processed_options, 1):
+    for rank_idx, opt in enumerate(final_options, 1):
         rec = opt.copy()
         rec["rank"] = rank_idx
         del rec["final_score"]

@@ -1,7 +1,7 @@
 {
   "event_id": "us_iran_2025",
-  "event_name": "US–Iran Strait Escalation (Jan 2025)",
-  "description": "Heightened US–Iran military posturing in the Strait of Hormuz and Red Sea following IRGC seizure of a commercial tanker, triggering EU sanctions and Houthi retaliatory strikes.",
+  "event_name": "israel_iran_strikes_june_2025",
+  "description": "Heightened US\u00e2\u20ac\u201cIran military posturing in the Strait of Hormuz and Red Sea following IRGC seizure of a commercial tanker, triggering EU sanctions and Houthi retaliatory strikes.",
   "steps": [
     {
       "step": 1,
@@ -45,31 +45,84 @@
         "trigger_score": 81,
         "timestamp": "2025-01-12T08:05:00Z",
         "confidence": "high",
-        "assumptions_used": ["red_sea_closure_partial", "cape_route_premium", "inr_passthrough_lag", "fuel_price_stickiness"],
+        "assumptions_used": [
+          "red_sea_closure_partial",
+          "cape_route_premium",
+          "inr_passthrough_lag",
+          "fuel_price_stickiness"
+        ],
         "projections": {
           "brent_price_usd": [
-            { "day": 0, "value": 79.0 },
-            { "day": 1, "value": 84.5 },
-            { "day": 3, "value": 88.0 },
-            { "day": 7, "value": 91.5 },
-            { "day": 14, "value": 89.0 }
+            {
+              "day": 0,
+              "value": 79.0
+            },
+            {
+              "day": 1,
+              "value": 84.5
+            },
+            {
+              "day": 3,
+              "value": 88.0
+            },
+            {
+              "day": 7,
+              "value": 91.5
+            },
+            {
+              "day": 14,
+              "value": 89.0
+            }
           ],
           "inr_usd_rate": [
-            { "day": 0, "value": 83.5 },
-            { "day": 7, "value": 84.8 },
-            { "day": 14, "value": 85.3 }
+            {
+              "day": 0,
+              "value": 83.5
+            },
+            {
+              "day": 7,
+              "value": 84.8
+            },
+            {
+              "day": 14,
+              "value": 85.3
+            }
           ],
           "domestic_fuel_price_inr_per_liter": [
-            { "day": 0, "value": 95.0 },
-            { "day": 7, "value": 98.5 },
-            { "day": 14, "value": 100.8 }
+            {
+              "day": 0,
+              "value": 95.0
+            },
+            {
+              "day": 7,
+              "value": 98.5
+            },
+            {
+              "day": 14,
+              "value": 100.8
+            }
           ],
           "state_impact": [
-            { "state": "Gujarat", "stress_index": 0.85 },
-            { "state": "Maharashtra", "stress_index": 0.68 },
-            { "state": "Tamil Nadu", "stress_index": 0.60 },
-            { "state": "Kerala", "stress_index": 0.55 },
-            { "state": "Uttar Pradesh", "stress_index": 0.42 }
+            {
+              "state": "Gujarat",
+              "stress_index": 0.85
+            },
+            {
+              "state": "Maharashtra",
+              "stress_index": 0.68
+            },
+            {
+              "state": "Tamil Nadu",
+              "stress_index": 0.6
+            },
+            {
+              "state": "Kerala",
+              "stress_index": 0.55
+            },
+            {
+              "state": "Uttar Pradesh",
+              "stress_index": 0.42
+            }
           ],
           "gdp_drag_pct": 0.55,
           "spr_depletion": {
@@ -156,7 +209,7 @@
           },
           {
             "source": "AIS",
-            "summary": "Dark fleet activity increases — 12 transponder gaps detected in Hormuz transit zone in 24h",
+            "summary": "Dark fleet activity increases \u00e2\u20ac\u201d 12 transponder gaps detected in Hormuz transit zone in 24h",
             "url": "",
             "timestamp": "2025-01-14T11:00:00Z"
           }
@@ -168,31 +221,83 @@
         "trigger_score": 74,
         "timestamp": "2025-01-14T12:05:00Z",
         "confidence": "medium",
-        "assumptions_used": ["hormuz_to_brent_elasticity", "sanctions_tightening_effect", "inr_passthrough_lag"],
+        "assumptions_used": [
+          "hormuz_to_brent_elasticity",
+          "sanctions_tightening_effect",
+          "inr_passthrough_lag"
+        ],
         "projections": {
           "brent_price_usd": [
-            { "day": 0, "value": 89.0 },
-            { "day": 1, "value": 90.5 },
-            { "day": 3, "value": 92.0 },
-            { "day": 7, "value": 90.0 },
-            { "day": 14, "value": 87.0 }
+            {
+              "day": 0,
+              "value": 89.0
+            },
+            {
+              "day": 1,
+              "value": 90.5
+            },
+            {
+              "day": 3,
+              "value": 92.0
+            },
+            {
+              "day": 7,
+              "value": 90.0
+            },
+            {
+              "day": 14,
+              "value": 87.0
+            }
           ],
           "inr_usd_rate": [
-            { "day": 0, "value": 84.8 },
-            { "day": 7, "value": 85.0 },
-            { "day": 14, "value": 84.5 }
+            {
+              "day": 0,
+              "value": 84.8
+            },
+            {
+              "day": 7,
+              "value": 85.0
+            },
+            {
+              "day": 14,
+              "value": 84.5
+            }
           ],
           "domestic_fuel_price_inr_per_liter": [
-            { "day": 0, "value": 98.5 },
-            { "day": 7, "value": 99.8 },
-            { "day": 14, "value": 99.0 }
+            {
+              "day": 0,
+              "value": 98.5
+            },
+            {
+              "day": 7,
+              "value": 99.8
+            },
+            {
+              "day": 14,
+              "value": 99.0
+            }
           ],
           "state_impact": [
-            { "state": "Gujarat", "stress_index": 0.78 },
-            { "state": "Maharashtra", "stress_index": 0.62 },
-            { "state": "Tamil Nadu", "stress_index": 0.52 },
-            { "state": "Kerala", "stress_index": 0.48 },
-            { "state": "Uttar Pradesh", "stress_index": 0.38 }
+            {
+              "state": "Gujarat",
+              "stress_index": 0.78
+            },
+            {
+              "state": "Maharashtra",
+              "stress_index": 0.62
+            },
+            {
+              "state": "Tamil Nadu",
+              "stress_index": 0.52
+            },
+            {
+              "state": "Kerala",
+              "stress_index": 0.48
+            },
+            {
+              "state": "Uttar Pradesh",
+              "stress_index": 0.38
+            }
           ],
           "gdp_drag_pct": 0.42,
           "spr_depletion": {
@@ -285,31 +390,82 @@
         "trigger_score": 55,
         "timestamp": "2025-01-18T09:05:00Z",
         "confidence": "medium",
-        "assumptions_used": ["hormuz_to_brent_elasticity", "deescalation_premium_decay"],
+        "assumptions_used": [
+          "hormuz_to_brent_elasticity",
+          "deescalation_premium_decay"
+        ],
         "projections": {
           "brent_price_usd": [
-            { "day": 0, "value": 87.0 },
-            { "day": 1, "value": 84.0 },
-            { "day": 3, "value": 82.0 },
-            { "day": 7, "value": 80.0 },
-            { "day": 14, "value": 79.0 }
+            {
+              "day": 0,
+              "value": 87.0
+            },
+            {
+              "day": 1,
+              "value": 84.0
+            },
+            {
+              "day": 3,
+              "value": 82.0
+            },
+            {
+              "day": 7,
+              "value": 80.0
+            },
+            {
+              "day": 14,
+              "value": 79.0
+            }
           ],
           "inr_usd_rate": [
-            { "day": 0, "value": 84.5 },
-            { "day": 7, "value": 84.0 },
-            { "day": 14, "value": 83.5 }
+            {
+              "day": 0,
+              "value": 84.5
+            },
+            {
+              "day": 7,
+              "value": 84.0
+            },
+            {
+              "day": 14,
+              "value": 83.5
+            }
           ],
           "domestic_fuel_price_inr_per_liter": [
-            { "day": 0, "value": 99.0 },
-            { "day": 7, "value": 97.5 },
-            { "day": 14, "value": 96.0 }
+            {
+              "day": 0,
+              "value": 99.0
+            },
+            {
+              "day": 7,
+              "value": 97.5
+            },
+            {
+              "day": 14,
+              "value": 96.0
+            }
           ],
           "state_impact": [
-            { "state": "Gujarat", "stress_index": 0.55 },
-            { "state": "Maharashtra", "stress_index": 0.45 },
-            { "state": "Tamil Nadu", "stress_index": 0.38 },
-            { "state": "Kerala", "stress_index": 0.35 },
-            { "state": "Uttar Pradesh", "stress_index": 0.28 }
+            {
+              "state": "Gujarat",
+              "stress_index": 0.55
+            },
+            {
+              "state": "Maharashtra",
+              "stress_index": 0.45
+            },
+            {
+              "state": "Tamil Nadu",
+              "stress_index": 0.38
+            },
+            {
+              "state": "Kerala",
+              "stress_index": 0.35
+            },
+            {
+              "state": "Uttar Pradesh",
+              "stress_index": 0.28
+            }
           ],
           "gdp_drag_pct": 0.25,
           "spr_depletion": {
@@ -372,5 +528,93 @@
         ]
       }
     }
-  ]
+  ],
+  "corridor": "hormuz",
+  "hourly_signals": [
+    {
+      "hour": -48,
+      "news_count": 30,
+      "sanctions_delta": 0,
+      "baseline_keywords": 40
+    },
+    {
+      "hour": -24,
+      "news_count": 60,
+      "sanctions_delta": 1,
+      "baseline_keywords": 75
+    },
+    {
+      "hour": 0,
+      "news_count": 120,
+      "sanctions_delta": 3,
+      "baseline_keywords": 120
+    },
+    {
+      "hour": 24,
+      "news_count": 180,
+      "sanctions_delta": 4,
+      "baseline_keywords": 190
+    }
+  ],
+  "actual_brent_prices": [
+    {
+      "hour": -168,
+      "price": 70.8
+    },
+    {
+      "hour": -144,
+      "price": 71.2
+    },
+    {
+      "hour": -72,
+      "price": 71.5
+    },
+    {
+      "hour": -48,
+      "price": 71.3
+    },
+    {
+      "hour": -24,
+      "price": 71.25
+    },
+    {
+      "hour": 0,
+      "price": 71.13
+    },
+    {
+      "hour": 24,
+      "price": 76.19
+    },
+    {
+      "hour": 48,
+      "price": 76.19
+    },
+    {
+      "hour": 72,
+      "price": 76.19
+    },
+    {
+      "hour": 96,
+      "price": 75.8
+    },
+    {
+      "hour": 120,
+      "price": 74.9
+    },
+    {
+      "hour": 144,
+      "price": 73.5
+    },
+    {
+      "hour": 168,
+      "price": 72.8
+    },
+    {
+      "hour": 192,
+      "price": 72.5
+    }
+  ],
+  "market_reaction_hour": 24,
+  "event_type": "escalating_conflict_with_prior_signal",
+  "event_notes": "Verified June 12 2025 closing Brent crude price was approx .13."
 }
